@@ -7,6 +7,8 @@ const Form = () => {
 
     const errorMessageName = validateName(name);
     const errorMessageEmail = validateEmail(email);
+    const okMessage = validateNameEmailOk(name, email);
+    
 
     return (
     <form
@@ -36,7 +38,8 @@ const Form = () => {
         ></input>
 
         {/* Error message for Email */}
-        <p>{errorMessageEmail}</p>
+        <p>{errorMessageEmail}{okMessage}</p>
+
 
         {/* Send button */}
         <button type="submit" disabled={errorMessageName + errorMessageEmail} >Enviar</button>
@@ -50,14 +53,25 @@ const enviar = (name) => {
 };
 
 const validateName = (name) => {
-    if(name.length < 5)
-    return "El nombre debe ser mayor de 5 caracteres"   
+    if(name.length <= 4){
+      return "⚠️ El nombre debe ser mayor de 5 caracteres";
+    }    
 }
 
 const validateEmail = (email) => {
     if(!email.includes('@'))
-    return "Email debe tener el formato correcto"
+    return "⚠️ Email debe tener el formato correcto"
     
 }
+
+const validateNameEmailOk = (name, email) => {
+    if(name.length >= 5 && email.includes('@')){
+      return '🟢 Datos validados';
+    }
+    
+}
+
+
+
 
 export default Form;
