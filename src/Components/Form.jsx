@@ -1,79 +1,63 @@
-import React, { useState } from "react";
-
+import { useState } from "react";
 
 const Form = () => {
-  //Aqui deberan implementar el form completo con sus validaciones
+    
+    const[name, setName] = useState('');
+    const[email, setEmail] = useState('');
 
-  const [userName, setUserName] = useState("");
-  const [userEmail, setUserEmail] = useState("");
+    const errorMessageName = validateName(name);
+    const errorMessageEmail = validateEmail(email);
 
-  //Validation menssage
-  // const [message, setMessage] = useState("");
+    return (
+    <form
+        onSubmit={ev => {
+            ev.preventDefault();
+            enviar(name, email); 
+        }}>      
+        
 
-  //Se crea un manejador de eventos para cada input
-  const onChageUserName = (e) => setUserName(e.target.value);
-  const onChageUserEmail = (e) => setUserEmail(e.target.value);
-
-  //Manejador para el evento onSubmit
-  const onSubmitForm = (e) => {
-    e.preventDefault();
-    alert(`Gracias ${userName} te contactaremos cuando antes vía mail`)
-  };
-  
-  const validateUserName = (userName) => {
-    //Eliminación de espacios en blanco
-    const withoutSpaces = userName.trim();
-
-    //Validación de la extensión
-    if (withoutSpaces.length > 5) {
-      return true;
-    }else {
-      return false;
-    }
-  };
-
-//  const validateUserEmail = (userEmail) => {
-//   const regEx= /[a-zA-Z0-9._%+-] + @[a-z0-9.-]+\.[a-z]{2,8}(.[a-z]{2,8})?/g
-
-//   if(regEx.test(userEmail)){
-//     setMessage("El Email es valido");
-//   }else if (!regEx.test(userEmail) && userEmail != ""){
-//     setMessage("El Email no es valido")
-//   }else{
-//     setMessage("");
-//   }
-//  }
-
-  const isUsernameValid = validateUserName(userName);
-  // const isUserEmail = validateUserEmail(userEmail);
-
-
-  return (
-    <div className="App">
-      <form onSubmit={onSubmitForm}>
-
-      <input
-        type="text"
+        <input 
+        type='text'
+        name="nombre"
         placeholder="Nombre completo"
-        value={userName}
-        onChange={onChageUserName}
-        autoComplete="off"
-        />
+        value={name}
+        onChange={ev => setName(ev.target.value)}
+        ></input>
 
-      <input
-        type="email"
+        {/* Error message for Name */}
+        <p>{errorMessageName}</p>
+        
+        <input 
+        type='text'
+        name="email"
         placeholder="Email"
-        value={userEmail}
-        onChange={onChageUserEmail}
-        autoComplete='off'
-        />
+        value={email}
+        onChange={ev => setEmail(ev.target.value)}
+        ></input>
 
-      {/* Botón de Enviar */}
-      <button type="submit">Enviar</button>
-      {/* {message}; */}
-      </form>
-    </div>
-  );
+        {/* Error message for Email */}
+        <p>{errorMessageEmail}</p>
+
+        {/* Send button */}
+        <button type="submit" disabled={errorMessageName + errorMessageEmail} >Enviar</button>
+
+    </form>    
+    )
+}
+
+const enviar = (name) => {
+    alert(`Gracias ${name}, nos contactaremos lo antes posible vía mail`);
 };
+
+const validateName = (name) => {
+    if(name.length < 5)
+    return "El nombre debe ser mayor de 5 caracteres"   
+}
+
+const validateEmail = (email) => {
+    if(!email.includes('@'))
+    return "Email debe tener el formato correcto"
+    
+}
 
 export default Form;
