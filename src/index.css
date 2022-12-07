@@ -30,6 +30,12 @@ nav{
   padding: 1rem;
 }
 
+#navBar{
+  padding: 1rem;
+  
+}
+
+
 a{
   color: #000;
   text-decoration: none;
@@ -69,10 +75,24 @@ form{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 300px;
-  height: 100px;
-  margin: 0 auto;
+  width: 350px;
+  height: 250px;
+  margin: auto;
+  padding: 0rem 0.5rem 0 0.5rem;
 }
+
+#contactText{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 50%;
+  height: auto;
+  margin: auto;
+  padding: 3rem;
+  align-items: center;
+
+}
+
 
 .card{
   display: flex;
@@ -134,3 +154,15 @@ tr:nth-child(even) {
 .dark > a {
   color: white;
 }
+
+#detailDoctor{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 50%;
+  height: auto;
+  margin: auto;
+  padding: 3rem;
+  align-items: center;
+}
+

@@ -1,5 +1,7 @@
 import doctorimg from '../Assets/doctor.jpg'
+import Detail from '../Routes/Detail';
 
+ 
 
 function Doctor({doctors}) {
 
@@ -18,7 +20,7 @@ function Doctor({doctors}) {
         <p class="card-text">ID Doctor: {doctors.id}</p>
         <h5 className='card-title'>{doctors.name}</h5>
         <p class="card-text">User Name: {doctors.username}</p>
-        <a type="button" class="btn btn-primary btn-sm" href="/dentist/:id">Info Doctor</a>
+        <a type="button" class="btn btn-primary btn-sm" href={`/dentist/${doctors.id}`}>Details</a>
         <button onClick={addFav} className="btn btn-primary btn-sm">⭐</button>
         </div>
         </div>

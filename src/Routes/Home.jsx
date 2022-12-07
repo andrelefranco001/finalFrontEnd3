@@ -7,8 +7,7 @@ import Card from '../Components/Card'
 const Home = () => {
   return (
     <main className="" >
-      <h1 className='text-center disply-1 py-4'>Home</h1>
-      {/* <Card /> */}
+      <h1 className='text-center display-4 py-4'>Listado de doctores</h1>
       <App2 />
     </main>
   )

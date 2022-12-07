@@ -12,7 +12,8 @@ const Form = () => {
 
     return (
     <form
-        onSubmit={ev => {
+            id="Formulario"
+            onSubmit={ev => {
             ev.preventDefault();
             enviar(name, email); 
         }}>      
@@ -42,7 +43,9 @@ const Form = () => {
 
 
         {/* Send button */}
-        <button type="submit" disabled={errorMessageName + errorMessageEmail} >Enviar</button>
+        <button type="submit" class="btn btn-primary" disabled={errorMessageName + errorMessageEmail} >Enviar</button>
+
+    
 
     </form>    
     )
@@ -50,9 +53,11 @@ const Form = () => {
 
 const enviar = (name) => {
     alert(`Gracias ${name}, nos contactaremos lo antes posible vía mail`);
+    
 };
 
 const validateName = (name) => {
+    
     if(name.length <= 4){
       return "⚠️ El nombre debe ser mayor de 5 caracteres";
     }    
@@ -60,7 +65,7 @@ const validateName = (name) => {
 
 const validateEmail = (email) => {
     if(!email.includes('@'))
-    return "⚠️ Email debe tener el formato correcto"
+    return "⚠️ Email debe tener el formato correcto, debe contener un caracter '@'"
     
 }
 
