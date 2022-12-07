@@ -7,6 +7,7 @@ import Detail from "./Routes/Detail";
 import Contact from "./Routes/Contact";
 import Favs from "./Routes/Favs";
 
+
 function App() {
   return (
 
@@ -18,6 +19,7 @@ function App() {
               <Route path="/dentist" element={<Detail />} />
               <Route path="/contacto" element={<Contact />} />
               <Route path="/favs" element={<Favs />} />
+              <Route path="/dentist/:id" element={<Detail />} />
             </Routes>
           </BrowserRouter>
           <Footer />
