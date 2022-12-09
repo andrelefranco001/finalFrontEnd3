@@ -2,7 +2,7 @@ import React, {useEffect,useState} from 'react'
 import Doctor from './Doctor';
 
 
-function DoctorList() {
+function DoctorList({handleClick}) {
 
     const [doctors, setDoctors] = useState([])
 
@@ -23,7 +23,7 @@ function DoctorList() {
             doctors.map(doctors => {
                 return (
                     <div className='col-md-3' key={doctors.id}>
-                    <Doctor doctors={doctors} />
+                    <Doctor doctors={doctors} key={doctors.id} handleClick={handleClick}/>
                     </div>
                 )
             })

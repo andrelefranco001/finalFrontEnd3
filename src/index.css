@@ -35,6 +35,15 @@ nav{
   
 }
 
+#sendButton{
+  margin-top: 2rem;
+}
+
+#sorry{
+  display: flex;
+  justify-content: center
+  
+}
 
 a{
   color: #000;
@@ -153,6 +162,26 @@ tr:nth-child(even) {
 }
 .dark > a {
   color: white;
+}
+
+#headerApp{
+  /* background-color: aqua; */
+}
+
+#dayN{
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+  justify-content:right;
+}
+
+#footerItem{
+  justify-content:center;  
+  max-width: 50%;
+  height: auto;
+  margin: auto;
+  padding: 3rem;
+  
 }
 
 #detailDoctor{

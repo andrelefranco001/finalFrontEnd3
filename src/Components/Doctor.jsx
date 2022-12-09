@@ -1,13 +1,27 @@
-import doctorimg from '../Assets/doctor.jpg'
+import doctorimg from '../Assets/dentist.png'
+import favicon from '../Assets/add-to-favorites.png'
 import Detail from '../Routes/Detail';
+import { useContext, useEffect, useState } from 'react';
+import { FavsContext } from '../Context/ContextFavs';
+import React from "react";
+import { getFavFromStorage, isFavorited, removeFavInStorage,setFavInStorage } from './utils/localStorage';
 
- 
+function Doctor ({doctors, handleClick}) {
+    
+// const {name, username, id} = doctors;
+// const {setData} = useContext(null) 
 
-function Doctor({doctors}) {
+// const addFav = () => {
+//   setFavInStorage({name, username, id})
+//   setData(getFavFromStorage())
+// }
 
-    const addFav = ()=>{
-        // Aqui iria la logica para agregar la Card en el localStorage
-      }
+// const removeFav = () => {
+//   removeFavInStorage(id);
+//   setData(getFavFromStorage());
+// };
+
+// const favorite = isFavorited(id);
 
   return (
     <div className='row'>
@@ -21,7 +35,10 @@ function Doctor({doctors}) {
         <h5 className='card-title'>{doctors.name}</h5>
         <p class="card-text">User Name: {doctors.username}</p>
         <a type="button" class="btn btn-primary btn-sm" href={`/dentist/${doctors.id}`}>Details</a>
-        <button onClick={addFav} className="btn btn-primary btn-sm">⭐</button>
+        <a><img onClick={()=>handleClick(doctors)} class="img-fluid rounded" src={favicon} alt=""/></a>
+        {/* <a><img onClick={()=>handleClick(doctors)} class="img-fluid rounded" src={favicon} alt=""/></a> */}
+        {/* <button onClick={addFav} className="btn btn-primary btn-sm">⭐</button> */}
+
         </div>
         </div>
 

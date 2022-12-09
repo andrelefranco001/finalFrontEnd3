@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import unDoctor from '../Funtions/unDoctor';
-import doctorimg from '../Assets/doctor.jpg'
+import doctorimg from '../Assets/dental-care.png'
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 

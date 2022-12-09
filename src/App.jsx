@@ -6,14 +6,37 @@ import Home from "./Routes/Home";
 import Detail from "./Routes/Detail";
 import Contact from "./Routes/Contact";
 import Favs from "./Routes/Favs";
+import { useState } from "react";
+import ThemesB from "./Funtions/themeButton";
+import themeicon from './Assets/day-and-night.png'
 
+
+const themeStyles = {
+  dark: {
+    background: '#12121296',
+    textColor: 'white'
+  },
+  light: {
+    background: 'white',
+    textColor: '#12121296'
+  }
+}
 
 function App() {
+  const [theme, setTheme] = useState('light');
+  const toggleTheme = () => theme === 'light' ? setTheme('dark') : setTheme('light');
+
+  // id="headerApp" style={{backgroundColor: themeStyles[theme].background}}
+ 
   return (
 
-      <div className="App">
+      <div className="App" >
           <Navbar />
-          <BrowserRouter>
+          
+          
+      <header id="headerApp" style={{backgroundColor: themeStyles[theme].background, color: themeStyles[theme].textColor}}>
+      <a id="dayN"><img class="img-fluid rounded" src={themeicon} alt="ligth/dark" onClick={toggleTheme} /></a>
+          <BrowserRouter >
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
@@ -23,6 +46,7 @@ function App() {
             </Routes>
           </BrowserRouter>
           <Footer />
+          </header>
       </div>
   );
 }

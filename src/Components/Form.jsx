@@ -4,6 +4,7 @@ const Form = () => {
     
     const[name, setName] = useState('');
     const[email, setEmail] = useState('');
+    const[consulta, setConsulta] = useState('');
 
     const errorMessageName = validateName(name);
     const errorMessageEmail = validateEmail(email);
@@ -11,11 +12,12 @@ const Form = () => {
     
 
     return (
+        
     <form
             id="Formulario"
             onSubmit={ev => {
             ev.preventDefault();
-            enviar(name, email); 
+            enviar(name, email, consulta); 
         }}>      
         
 
@@ -41,10 +43,19 @@ const Form = () => {
         {/* Error message for Email */}
         <p>{errorMessageEmail}{okMessage}</p>
 
+        <input 
+         
+        type='text'
+        name="consulta"
+        placeholder="Consulta"
+        value={consulta}
+        onChange={ev => setConsulta(ev.target.value)}
+        ></input>
 
+        <div style={{display: 'flex', justifyContent: 'center'}}>
         {/* Send button */}
-        <button type="submit" class="btn btn-primary" disabled={errorMessageName + errorMessageEmail} >Enviar</button>
-
+        <button id="sendButton" type="submit" class="btn btn-primary" disabled={errorMessageName + errorMessageEmail} >Enviar</button>
+        </div>
     
 
     </form>    

@@ -5,14 +5,13 @@ import icoFacebook from '../Assets/ico-facebook.png'
 
 const Footer = () => {
   return (
-    <footer className='display flex'>
-    <div>
+    <footer className='display flex' id='footerItem'>
+    <div >
       <p>Powered by 
       <img class="img-fluid" alt="" src={logo} width="350px" height="250"/>      
       </p>       
     </div>
     <div>
-    <img class="img-fluid" alt="" src={icoFacebook} width="150px" height="250"/>
 
     </div>
         
