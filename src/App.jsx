@@ -13,12 +13,12 @@ import themeicon from './Assets/day-and-night.png'
 
 const themeStyles = {
   dark: {
-    background: '#12121296',
+    background: '#323266',
     textColor: 'white'
   },
   light: {
     background: 'white',
-    textColor: '#12121296'
+    textColor: '#323266'
   }
 }
 
