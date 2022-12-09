@@ -32,7 +32,35 @@ nav{
 
 #navBar{
   padding: 1rem;
+  background: rgb(148,182,233);
+  background: linear-gradient(90deg, rgba(148,182,233,0.3295693277310925) 20%, rgba(244,244,244,1) 100%);
   
+}
+
+#DetButton{
+
+  background: #5E5DF0;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  text-decoration: none;
+  margin-top: 0.5rem;
+
 }
 
 #sendButton{
@@ -182,6 +210,10 @@ tr:nth-child(even) {
   margin: auto;
   padding: 3rem;
   
+}
+
+#Perfil{
+  padding: 1rem;
 }
 
 #detailDoctor{

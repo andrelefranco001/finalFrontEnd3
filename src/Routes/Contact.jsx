@@ -11,7 +11,7 @@ const Contact = () => {
     
     <div>
     <div  id='contactText'>
-      <h2 className='display-4' >Quieres saber más?</h2>
+      <h2 className='display-4' >¿Quieres saber más?</h2>
       <p >Envíanos tus consultas y nos pondremos en contacto contigo</p>   
     <img class="img-fluid rounded" src={doctorimg} alt=""/>
     </div>

@@ -34,7 +34,7 @@ const Detail = () => {
         <p class="lead">Phone: {doctor.phone}</p>
         <p class="lead">Website: {doctor.website}</p>
         
-        <a class="btn btn-primary btn-lg" href="/contacto" role="button">Contacto</a>
+        <a id='DetButton' href="/contacto" role="button">Contacto</a>
         {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
         {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
       </div>

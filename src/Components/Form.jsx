@@ -54,7 +54,7 @@ const Form = () => {
 
         <div style={{display: 'flex', justifyContent: 'center'}}>
         {/* Send button */}
-        <button id="sendButton" type="submit" class="btn btn-primary" disabled={errorMessageName + errorMessageEmail} >Enviar</button>
+        <button id="DetButton" type="submit" class="btn btn-primary" disabled={errorMessageName + errorMessageEmail} >Enviar</button>
         </div>
     
 

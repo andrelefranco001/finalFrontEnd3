@@ -4,7 +4,7 @@ export const FavsContext = React.createContext()
 
 export const FavsProvider = (props) => {
 
-    console.log("provider",props);
+    console.log("provider");
     const [favoritos,setFavoritos] = React.useState([])
   
     function addToFavs(){

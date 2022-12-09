@@ -13,10 +13,11 @@ const Navbar = () => {
   
   return (
     // Aqui deberan agregar los liks correspondientes a las rutas definidas
+ 
     
 
-    <nav id="navBar" class="navbar navbar-expand-lg navbar-light bg-light">
-        <img class="d-inline-block align-top " alt="" src={ico} width="40px" height="40"/>
+    <nav id="navBar" class="navbar navbar-expand-lg ">
+        <img class="d-inline-block align-top " alt="" src={ico} />
 
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav">
